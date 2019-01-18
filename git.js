@@ -20,14 +20,18 @@ const askToAbort = () => {
 try {
     execSync(`git rebase master development`)
 } catch(err) {
-    console.log('\nrun "git rebase master development"\n')
-    console.log('\n', err.output[1].toString())
-    console.log(chalk.bgRed.white('\n !!!  WATCH OUT  !!! \n'))
-    console.log(chalk.red('\n You are  \n'))
-    console.log(chalk.bgRed.white(err.output[2].toString()))
+    const firstOutput = err.output[1].toString()
+    const secondOutput = err.output[2].toString()
 
-    console.log(err.output[1].toString().search('CONFLICT'))
-    if (err.output[1].toString().search('CONFLICT') > -1) {
+    console.log('\nrun "git rebase master development"\n')
+
+    console.log('\n', firstOutput)
+    console.log(chalk.bgRed.white('\n !!!  WATCH OUT  !!! '))
+    console.log('\n You are trying to rebase master onto development \n')
+    console.log(chalk.bgRed.white(secondOutput))
+
+    if (firstOutput.search('CONFLICT') > -1) {
+        console.log(chalk.red('\n Some CONFLICTS was found \n'))
         askToAbort()
     } else {
         process.exit(0)
