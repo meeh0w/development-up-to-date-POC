@@ -1,2 +1,2 @@
 
-// some chaes for test
+test = () => {}
