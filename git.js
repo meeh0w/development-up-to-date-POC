@@ -3,5 +3,5 @@ const { execSync } = require('child_process')
 try {
     execSync(`git rebase master development`)
 } catch(err) {
-    console.log(err.options.stderr.toString())
+    console.log('>>', err.stderr.toString())
 }
