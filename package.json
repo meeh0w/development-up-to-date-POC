@@ -1,6 +1,6 @@
 {
   "name": "development-up-to-date-poc",
-  "version": "0.0.15",
+  "version": "0.0.8",
   "description": "",
   "main": "index.js",
   "scripts": {
