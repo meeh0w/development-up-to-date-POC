@@ -12,7 +12,7 @@ const askToAbort = () => {
         if (answer.toLowerCase() !== 'n') {
             execSync(`git rebase --abort`)
         }
-        promptConsole.close();
+        promptConsole.close()
         process.exit(0)
     })
 }
