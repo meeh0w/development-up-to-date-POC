@@ -8,8 +8,8 @@ const promptConsole = readline.createInterface({
 try {
     execSync(`git rebase master development`)
 } catch(err) {
-    console.log('>>', err.output[1])
-    console.log('>>', err.output[2])
+    console.log('>>', err.output[1].toString())
+    console.log('>>', err.output[2].toString())
 
     promptConsole.question('Would you like to abort rebase? [Y/N] ', (answer) => {
         if (answer.toLowerCase() === 'y') {
