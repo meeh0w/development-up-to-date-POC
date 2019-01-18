@@ -6,7 +6,7 @@
   "scripts": {
     "preversion": "git checkout master && npm ci",
     "postversion": "git push && git push --tags && npm run update-development",
-    "update-development": "git rebase master development"
+    "update-development": "git rebase master development && git push"
   },
   "repository": {
     "type": "git",
