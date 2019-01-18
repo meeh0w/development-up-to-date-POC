@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "preversion": "npm ci",
+    "preversion": "git checkout master && npm ci",
     "postversion": "git push && git push --tags && npm run update-development",
     "update-development": "git rebase master development"
   },
