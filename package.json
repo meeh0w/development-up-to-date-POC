@@ -1,0 +1,19 @@
+{
+  "name": "development-up-to-date-poc",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/damianwisniewski/development-up-to-date-POC.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/damianwisniewski/development-up-to-date-POC/issues"
+  },
+  "homepage": "https://github.com/damianwisniewski/development-up-to-date-POC#readme"
+}
