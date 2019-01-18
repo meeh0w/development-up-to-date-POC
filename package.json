@@ -4,9 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "test": "git rebase development || echo \"\\x1b[104m\\x1b[97m\nError: no test specified\\x1b[0m\n sdsd \" && exit 1",
     "preversion": "git checkout master && npm ci",
     "postversion": "git push && git push --tags && npm run update-development",
-    "update-development": "git rebase master development && git push"
+    "update-development": "git rebase master development || echo \"\\x1b[104m\\x1b[97m\nError: no test specified\\x1b[0m\n sdsd \" && exit 1 && git push"
   },
   "repository": {
     "type": "git",
