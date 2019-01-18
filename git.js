@@ -19,9 +19,5 @@ try {
     if (firstOutput.search('CONFLICT') > -1) {
         console.log(chalk.red('\n Some CONFLICTS was found \n'))
         execSync(`git rebase --abort`)
-<<<<<<< HEAD
-        process.exit(1)
-=======
->>>>>>> push more data
     }
 }
