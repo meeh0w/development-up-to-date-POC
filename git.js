@@ -25,6 +25,7 @@ try {
     console.log(chalk.red('\n You are  \n'))
     console.log(chalk.bgRed.white(err.output[2].toString()))
 
+    console.log(err.output[2].toString().search('CONFLICT'))
     if (err.output[2].toString().search('CONFLICT') > -1) {
         askToAbort()
     } else {
