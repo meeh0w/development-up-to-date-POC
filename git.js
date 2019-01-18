@@ -20,7 +20,7 @@ const chalk = require('chalk')
 try {
     const output = execSync(`git rebase master development`).toString().trim()
     console.log(output)
-    process.exit(0)
+    // process.exit(0)
 } catch(err) {
     const firstOutput = err.output[1].toString()
     const secondOutput = err.output[2].toString()
