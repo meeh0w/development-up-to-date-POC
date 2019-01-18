@@ -9,7 +9,9 @@ const promptConsole = readline.createInterface({
 try {
     execSync(`git rebase master development`)
 } catch(err) {
+    console.log('\n-----------------------------')
     console.log('\n', err.output[1].toString())
+    console.log('\n-----------------------------')
     console.log('\n', err.output[2].toString())
     console.log(chalk.bgRed.white('!!! > BIG-ASS RED MESSAGE < !!!'))
 
