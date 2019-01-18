@@ -13,6 +13,7 @@ const askToAbort = () => {
             execSync(`git rebase --abort`)
         }
         promptConsole.close();
+        process.exit(0)
     })
 }
 
