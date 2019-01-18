@@ -1,26 +1,24 @@
 const { execSync } = require('child_process')
 const chalk = require('chalk')
-// const readline = require('readline')
+const readline = require('readline')
 
-// const promptConsole = readline.createInterface({
-//     input: process.stdin,
-//     output: process.stdout
-// })
+const askToAbort = () => {
+    const promptConsole = readline.createInterface({
+        input: process.stdin,
+        output: process.stdout
+    })
 
-// const askToAbort = () => {
-//     promptConsole.question('\n Would you like to abort operation? [Y/N] ', (answer) => {
-//         if (answer.toLowerCase() !== 'n') {
-//             execSync(`git rebase --abort`)
-//         }
-//         promptConsole.close()
-//         process.exit(0)
-//     })
-// }
+    promptConsole.question('\n Would you like to abort operation? [Y/N] ', (answer) => {
+        if (answer.toLowerCase() !== 'n') {
+            execSync(`git rebase --abort`)
+        }
+        promptConsole.close()
+    })
+}
 
 try {
     const output = execSync(`git rebase master development`).toString().trim()
     console.log(output)
-    // process.exit(0)
 } catch(err) {
     const firstOutput = err.output[1].toString()
     const secondOutput = err.output[2].toString()
@@ -34,8 +32,6 @@ try {
 
     if (firstOutput.search('CONFLICT') > -1) {
         console.log(chalk.red('\n Some CONFLICTS was found \n'))
-        // askToAbort()
-    } else {
-        process.exit(0)
+        askToAbort()
     }
 }
