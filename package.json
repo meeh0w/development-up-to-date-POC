@@ -17,5 +17,8 @@
   "bugs": {
     "url": "https://github.com/damianwisniewski/development-up-to-date-POC/issues"
   },
-  "homepage": "https://github.com/damianwisniewski/development-up-to-date-POC#readme"
+  "homepage": "https://github.com/damianwisniewski/development-up-to-date-POC#readme",
+  "devDependencies": {
+    "chalk": "^2.4.2"
+  }
 }
