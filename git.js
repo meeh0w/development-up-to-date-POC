@@ -18,7 +18,7 @@ const askToAbort = () => {
 }
 
 try {
-    execSync(`git rebase master development`)
+    console.log(execSync(`git rebase master development`))
 } catch(err) {
     const firstOutput = err.output[1].toString()
     const secondOutput = err.output[2].toString()
