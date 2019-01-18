@@ -27,7 +27,7 @@ try {
 
     if (err.output[2].toString().search('CONFLICT') > -1) {
         askToAbort()
+    } else {
+        process.exit(0)
     }
-
-    process.exit(0)
 }
