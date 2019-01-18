@@ -4,4 +4,5 @@ try {
     execSync(`git rebase master development`)
 } catch(err) {
     console.log('>>', err.stderr.toString())
+    execSync(`git rebase --abort`)
 }
