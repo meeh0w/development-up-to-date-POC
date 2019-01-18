@@ -11,7 +11,7 @@ try {
 } catch(err) {
     console.log('\n', err.output[1].toString())
     console.log('\n', err.output[2].toString())
-    console.log(chalk.red('BIG-ASS RED MESSAGE'))
+    console.log(chalk.bgRed.white('!!! > BIG-ASS RED MESSAGE < !!!'))
 
     promptConsole.question('Would you like to abort rebase? [Y/N] ', (answer) => {
         if (answer.toLowerCase() === 'y') {
