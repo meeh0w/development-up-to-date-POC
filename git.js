@@ -2,10 +2,12 @@ const { execSync } = require('child_process')
 const chalk = require('chalk')
 
 try {
-    const output = execSync(`git rebase master development`).toString().trim()
+    const output = execSync(`git rebase master development`).toString()
     console.log(output)
 } catch(err) {
-    console.log(err)
+    console.log(err.stdout.toString())
+    console.log('\n test \n')
+    console.log(err.stderr.toString())
     const firstOutput = err.output[1].toString()
     const secondOutput = err.output[2].toString()
 
