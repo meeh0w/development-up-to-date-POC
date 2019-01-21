@@ -5,9 +5,6 @@ try {
     const output = execSync(`git rebase master development`).toString()
     console.log(output)
 } catch(err) {
-    console.log(err.stdout.toString())
-    console.log('\n test \n')
-    console.log(err.stderr.toString())
     const firstOutput = err.output[1].toString()
     const secondOutput = err.output[2].toString()
 
@@ -19,7 +16,10 @@ try {
     console.log(chalk.bgRed.white(secondOutput))
 
     if (firstOutput.search('CONFLICT') > -1) {
-        console.log(chalk.red('\n Some CONFLICTS was found \n'))
+        console.log(`
+            ${chalk.red('\n Some CONFLICTS was found! \n')}
+            Please resolve them manually!
+        `)
         execSync(`git rebase --abort`)
     }
 }
