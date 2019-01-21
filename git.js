@@ -19,6 +19,7 @@ try {
         console.log(chalk.red('\n Some CONFLICTS was found! \n'))
         execSync(`git rebase --abort`)
         console.log('Rebase was aborted. Please rebase it manually!')
-        process.exit(1)
     }
+    
+    process.exit(1)
 }
