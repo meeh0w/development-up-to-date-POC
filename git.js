@@ -16,10 +16,9 @@ try {
     console.log(chalk.bgRed.white(secondOutput))
 
     if (firstOutput.search('CONFLICT') > -1) {
-        console.log(`
-            ${chalk.red('\n Some CONFLICTS was found! \n')}
-            Please resolve them manually!
-        `)
+        console.log(chalk.red('\n Some CONFLICTS was found! \n'))
         execSync(`git rebase --abort`)
+        console.log('Rebase was aborted. Please rebase it manually!')
+        process.exit(1)
     }
 }
