@@ -1,4 +1,4 @@
 
 const tesowy2 = function() {
-    console.log('assssddds')
+    console.log('asdiis')
 }
